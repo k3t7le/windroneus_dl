@@ -69,6 +69,9 @@ python windroneus.py train --dataset=/home/windroneus/RCNN/Mask_RCNN/samples/coc
 ![image](https://user-images.githubusercontent.com/61860152/148709453-334e5950-44f5-4170-b71c-07109baddc3c.png)
 
 
+### 학습의 결과로 나온 weight 파일 저장 위치
+~/RCNN/Mask_RCNN/logs 폴더 밑에 coco로 시작하는 폴더명 밑에 mask_rcnn_coco_????.h5의 형태로 저장됨
+????의 숫자가 높을 수록 마지막 학습된 weight 파일임
 
 
 # Detect
