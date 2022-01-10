@@ -4,6 +4,7 @@
 ~/RCNN/Mask_RCNN/windroneus.py
 # detect
 ~/RCNN/Mask_RCNN/detect.py
+```
 
 # 학습
 ### 학습 및 detect를 위한 최초 환경 설정
