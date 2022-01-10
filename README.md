@@ -1,3 +1,10 @@
+# 관련 소스 파일
+```bash
+# 학습
+~/RCNN/Mask_RCNN/windroneus.py
+# detect
+~/RCNN/Mask_RCNN/detect.py
+
 # 학습
 ### 학습 및 detect를 위한 최초 환경 설정
 ```bash
@@ -67,26 +74,26 @@ python detect.py --sourcedir images --targetdir output3 --model /home/windroneus
 # COCO Class names
 # Index of the class in the list is its ID. For example, to get ID of
 # the teddy bear class, use: class_names.index('teddy bear')
-class_names = ['Gomsol'
-,'cypress tree '
-,'oyster oak '
-,'evergreen hardwood '
-,'softwood'
-,'hardwood '
-,'larch '
-,'Rigida Pine '
-,'chestnut '
-,'poplar (tulip tree )'
-,'cedar '
-,'oak tree '
-,'hornbeam '
-,'Pine tree '
-,'cypress tree '
-,'acacia tree '
-,'birch '
-,'pine tree '
-,'Hyo-rim of the immersion '
-,'Cypress']
+class_names = ['곰솔'
+,'구실잣밤나무'
+,'굴참나무'
+,'기타 상록활엽수'
+,'기타 침엽수'
+,'기타 활엽수'
+,'낙엽송'
+,'리기다 소나무'
+,'밤나무'
+,'백합나무(튤립나무)'
+,'삼나무'
+,'상수리나무'
+,'서어나무'
+,'소나무'
+,'신갈나무'
+,'아까시나무'
+,'자작나무'
+,'잣나무'
+,'침활혼효림'
+,'편백']
 ```
 
 # 폰트 사이즈 변경
