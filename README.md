@@ -1,49 +1,45 @@
-# 학습
-# dataset : 학습에 사용할 이미지 + result.json(라벨링 값) 파일이 있는 디렉토리
-# model : 사용할 파리미터 가중치 (coco 선택 시 프로젝트 root 폴더의 mask_rcnn_coco.h5 사용, last 선택 시 프로젝트root/logs/*coco* 마지막 폴더에서 시작)
+# 학습 및 detect를 위한 최초 환경 설정
+```bash
+# 터미널 접속 및 Mask_RCNN폴더로 이동
+cd RCNN/Mask_RCNN
+# python 설정 (텐서플로우 등의 버전이 최신 버전 사용이 안되어 아나콘다 사용하여 버전 지정 중)
+conda activate py356
+```
+아래 처럼 맨 앞에 (py356)이 보여야 함
+![image](https://user-images.githubusercontent.com/61860152/148709196-6ffe275c-afe3-4187-adf6-7dbf82a8e5b2.png)
+
+이 후 아래 모든 명령어는 /home/windroneus/RCNN/Mask_RCNN에서 실행됨
+
+# 학습 할 때 사용하는 용어 정리
+dataset : 학습에 사용할 이미지 + result.json(라벨링 값) 파일이 있는 디렉토리
+
+model : 사용할 파리미터 가중치 (coco 선택 시 프로젝트 root 폴더의 mask_rcnn_coco.h5 사용, last 선택 시 프로젝트root/logs/*coco* 마지막 폴더에서 시작)
 
 # case 1 최초 학습 or 기존 학습 완료된 데이터 기준 추가 학습 시
+```bash
 python windroneus.py train --dataset=/home/windroneus/RCNN/Mask_RCNN/samples/coco/project-1 --model=coco
+```
 
 # case 2 학습 진행 중 abort 됬을 때 이어서 학습 
+```bash
 python windroneus.py train --dataset=/home/windroneus/RCNN/Mask_RCNN/samples/coco/project-1 --model=last
+```
 
 
 
-# 예제
+# 예제 (여러개의 라벨 스튜디오 프로젝트 파일 대상으로 연이어 학습 진행 시
+
+```bash
 # 첫번째 라벨 스튜디오 프로젝트 파일로 학습 진행
 python windroneus.py train --dataset=/home/windroneus/RCNN/Mask_RCNN/samples/coco/project-1 --model=coco
-
 # 학습 완료 후 완료된 가중치 파일을 프로젝트root 로 복사 
-cd /home/windroneus/RCNN/Mask_RCNN
 ./copy_last_weight_to_root.sh
+# 두번째 라벨 스튜디오 프로젝트 파일로 학습 진행
+python windroneus.py train --dataset=/home/windroneus/RCNN/Mask_RCNN/samples/coco/project-2 --model=coco
+./copy_last_weight_to_root.sh
+# 세번째 라벨 스튜디오 프로젝트 파일로 학습 진행
+python windroneus.py train --dataset=/home/windroneus/RCNN/Mask_RCNN/samples/coco/project-3 --model=coco
+```
 
-
-결과
-(py356) windroneus@windroneus-X570-AORUS-ELITE:~/RCNN/Mask_RCNN$ ls -la
-합계 750524
-drwxrwxr-x 12 windroneus windroneus      4096  1월 10 10:18 .
-drwxrwxr-x  6 windroneus windroneus      4096  1월  5 13:17 ..
-drwxrwxr-x  8 windroneus windroneus      4096  1월  7 13:28 .git
--rw-rw-r--  1 windroneus windroneus       569  1월  5 10:52 .gitignore
-drwxrwxr-x  6 windroneus windroneus      4096  1월  5 10:57 .venv
--rw-rw-r--  1 windroneus windroneus      1095  1월  5 10:52 LICENSE
--rw-rw-r--  1 windroneus windroneus        58  1월  5 10:52 MANIFEST.in
--rw-rw-r--  1 windroneus windroneus     13771  1월  5 10:52 README.md
-drwxrwxr-x  2 windroneus windroneus      4096  1월  5 10:52 assets
-drwxrwxr-x  4 windroneus windroneus      4096  1월  5 11:45 build
--rwxrwxr-x  1 windroneus windroneus       551  1월 10 09:45 copy_last_weight_to_root.sh
--rw-rw-r--  1 windroneus windroneus      7843  1월 10 10:07 detect.py
-drwxrwxr-x  2 windroneus windroneus      4096  1월  5 11:45 dist
-drwxrwxr-x  6 windroneus windroneus      4096  1월  7 15:46 images
-drwxrwxr-x 14 windroneus windroneus      4096  1월 10 10:12 logs
-drwxrwxr-x  2 windroneus windroneus      4096  1월  7 14:57 mask_rcnn.egg-info
--rw-rw-r--  1 windroneus windroneus 255856928  1월  5 14:47 mask_rcnn_balloon.h5
--rw-rw-r--  1 windroneus windroneus 256268824  1월 10 10:18 mask_rcnn_coco.h5
--rw-rw-r--  1 windroneus windroneus 256268824  1월 10 10:18 mask_rcnn_coco.h5_backup_20220110101837
-drwxrwxr-x  3 windroneus windroneus      4096  1월 10 09:19 mrcnn
--rw-rw-r--  1 windroneus windroneus       120  1월  5 11:41 requirements.txt
-drwxrwxr-x  9 windroneus windroneus      4096  1월 10 10:07 samples
--rw-rw-r--  1 windroneus windroneus        99  1월  5 10:52 setup.cfg
--rw-rw-r--  1 windroneus windroneus      2518  1월  5 10:52 setup.py
--rw-rw-r--  1 windroneus windroneus     22113  1월 10 09:59 windroneus.py
+참고 : ./copy_last_weight_to_root.sh 파일은 logs폴더내에 쌓이는 가중치 파일 중 최신 파일을 Mask_RCNN루트 폴더로 복사 하는 명령
+![image](https://user-images.githubusercontent.com/61860152/148709453-334e5950-44f5-4170-b71c-07109baddc3c.png)
