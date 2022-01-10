@@ -45,6 +45,9 @@ python windroneus.py train --dataset=/home/windroneus/RCNN/Mask_RCNN/samples/coc
 참고 : ./copy_last_weight_to_root.sh 파일은 logs폴더내에 쌓이는 가중치 파일 중 최신 파일을 Mask_RCNN루트 폴더로 복사 하는 명령
 ![image](https://user-images.githubusercontent.com/61860152/148709453-334e5950-44f5-4170-b71c-07109baddc3c.png)
 
+
+
+
 # Detect
 ```bash
 # 소스 폴더에 있는 모든 이미지내의 나무이미지를 찾아서 타겟 폴더에 생성  (파일 명 규칙은 기존 파일명의 앞에 OUTPUT_를 추가)
@@ -53,12 +56,18 @@ python detect.py --sourcedir images --targetdir output3
 # 지정 가중치 파일 사용
 python detect.py --sourcedir images --targetdir output3 --model /home/windroneus/RCNN/Mask_RCNN/logs/coco20220107T1754/mask_rcnn_coco_0118.h5
 ```
+결과 파일 예
+![image](https://user-images.githubusercontent.com/61860152/148712807-424df4c0-17b6-4407-92e6-57e93301dc4f.png)
+
+
+
 
 
 # Error
 학습 도중 Detect를 진행하면 오류 발생 
  -> 학습 종료 후 진행 OR 학습 진행 중인 내용 강제 종료(학습 진행 중인 창에서 CTRL+C)
 ![image](https://user-images.githubusercontent.com/61860152/148710771-b0bb551c-9bde-4fbc-ac8a-48491d63cd20.png)
+
 
 
 
