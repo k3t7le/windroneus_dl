@@ -6,6 +6,21 @@
 ~/RCNN/Mask_RCNN/detect.py
 ```
 
+# 학습 데이터 준비
+라벨 스튜디오에서 export 받은 폴더의 result.json 파일 수정 필요
+
+
+before
+```json
+"file_name": "images\\1/2955d42c-211018-way2-H40-2-orthophoto.png"
+```
+
+after
+```json
+"file_name": "images/2955d42c-211018-way2-H40-2-orthophoto.png"
+```
+
+
 # 학습
 ### 학습 및 detect를 위한 최초 환경 설정
 ```bash
@@ -106,7 +121,7 @@ font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf",
 
 
 # Error
-학습 도중 Detect를 진행하면 오류 발생 
+* 학습 도중 Detect를 진행하면 오류 발생 
  -> 학습 종료 후 진행 OR 학습 진행 중인 내용 강제 종료(학습 진행 중인 창에서 CTRL+C)
 ![image](https://user-images.githubusercontent.com/61860152/148710771-b0bb551c-9bde-4fbc-ac8a-48491d63cd20.png)
 
