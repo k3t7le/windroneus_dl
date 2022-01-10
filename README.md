@@ -1,4 +1,5 @@
-# 학습 및 detect를 위한 최초 환경 설정
+# 학습
+### 학습 및 detect를 위한 최초 환경 설정
 ```bash
 # 터미널 접속 및 Mask_RCNN폴더로 이동
 cd RCNN/Mask_RCNN
@@ -10,24 +11,24 @@ conda activate py356
 
 이 후 아래 모든 명령어는 /home/windroneus/RCNN/Mask_RCNN에서 실행됨
 
-# 학습 할 때 사용하는 용어 정리
+### 학습 할 때 사용하는 용어 정리
 dataset : 학습에 사용할 이미지 + result.json(라벨링 값) 파일이 있는 디렉토리
 
 model : 사용할 파리미터 가중치 (coco 선택 시 프로젝트 root 폴더의 mask_rcnn_coco.h5 사용, last 선택 시 프로젝트root/logs/*coco* 마지막 폴더에서 시작)
 
-# case 1 최초 학습 or 기존 학습 완료된 데이터 기준 추가 학습 시
+### case 1 최초 학습 or 기존 학습 완료된 데이터 기준 추가 학습 시
 ```bash
 python windroneus.py train --dataset=/home/windroneus/RCNN/Mask_RCNN/samples/coco/project-1 --model=coco
 ```
 
-# case 2 학습 진행 중 abort 됬을 때 이어서 학습 
+### case 2 학습 진행 중 abort 됬을 때 이어서 학습 
 ```bash
 python windroneus.py train --dataset=/home/windroneus/RCNN/Mask_RCNN/samples/coco/project-1 --model=last
 ```
 
 
 
-# 예제 (여러개의 라벨 스튜디오 프로젝트 파일 대상으로 연이어 학습 진행 시
+### 예제 (여러개의 라벨 스튜디오 프로젝트 파일 대상으로 연이어 학습 진행 시
 
 ```bash
 # 첫번째 라벨 스튜디오 프로젝트 파일로 학습 진행
