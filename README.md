@@ -44,3 +44,15 @@ python windroneus.py train --dataset=/home/windroneus/RCNN/Mask_RCNN/samples/coc
 
 참고 : ./copy_last_weight_to_root.sh 파일은 logs폴더내에 쌓이는 가중치 파일 중 최신 파일을 Mask_RCNN루트 폴더로 복사 하는 명령
 ![image](https://user-images.githubusercontent.com/61860152/148709453-334e5950-44f5-4170-b71c-07109baddc3c.png)
+
+# Detect
+
+# Error
+학습 도중 Detect를 진행하면 오류 발생 
+ -> 학습 종료 후 진행 OR 학습 진행 중인 내용 강제 종료(학습 진행 중인 창에서 CTRL+C)
+![image](https://user-images.githubusercontent.com/61860152/148710771-b0bb551c-9bde-4fbc-ac8a-48491d63cd20.png)
+
+결과를 저장할 폴더가 존재하지 않으면 오류 발생
+ -> 폴더 생성 후 재 실행
+![image](https://user-images.githubusercontent.com/61860152/148710847-a76069dc-d581-4e3d-a3b8-f176cdc7b2b2.png)
+
