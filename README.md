@@ -61,6 +61,40 @@ python detect.py --sourcedir images --targetdir output3 --model /home/windroneus
 
 
 
+# Class Name 변경
+라벨 스튜디오 작업내용 기준으로 클래스명 지정 나무의 영문명이 잘못 됬을 경우 detect.py파일에서 아래 부분 수정
+```python
+# COCO Class names
+# Index of the class in the list is its ID. For example, to get ID of
+# the teddy bear class, use: class_names.index('teddy bear')
+class_names = ['Gomsol'
+,'cypress tree '
+,'oyster oak '
+,'evergreen hardwood '
+,'softwood'
+,'hardwood '
+,'larch '
+,'Rigida Pine '
+,'chestnut '
+,'poplar (tulip tree )'
+,'cedar '
+,'oak tree '
+,'hornbeam '
+,'Pine tree '
+,'cypress tree '
+,'acacia tree '
+,'birch '
+,'pine tree '
+,'Hyo-rim of the immersion '
+,'Cypress']
+```
+
+# 폰트 사이즈 변경
+```python
+# detect.py 222 line  50 숫자를 변경
+# Label
+font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf",50)
+```
 
 
 # Error
