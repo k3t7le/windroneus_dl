@@ -73,6 +73,11 @@ python windroneus.py train --dataset=/home/windroneus/RCNN/Mask_RCNN/samples/coc
 ~/RCNN/Mask_RCNN/logs 폴더 밑에 coco로 시작하는 폴더명 밑에 mask_rcnn_coco_????.h5의 형태로 저장됨
 ????의 숫자가 높을 수록 마지막 학습된 weight 파일임
 
+```bash
+# 드론으로찍은 사진 학습 파일 project-1, project-2
+~/RCNN/Mask_RCNNmask_rcnn_coco_drone_pic.h5
+
+```
 
 # Detect
 ```bash
@@ -131,3 +136,12 @@ font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf",
 
 
 
+# 참고
+
+![image](https://user-images.githubusercontent.com/61860152/148738120-84bf7f64-443d-4ebf-8dca-6936c0c250c6.png)
+
+![image](https://user-images.githubusercontent.com/61860152/148738173-709f5da9-2051-4bdb-b2c1-0921f0063e1e.png)
+
+![image](https://user-images.githubusercontent.com/61860152/148738352-4ef57f6c-7b80-4eaf-97c4-6763d3b6e3ff.png)
+
+![image](https://user-images.githubusercontent.com/61860152/148738380-d9216100-4316-4ea9-86df-c7abc0e38d71.png)
